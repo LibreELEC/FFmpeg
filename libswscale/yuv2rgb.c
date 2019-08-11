@@ -575,10 +575,6 @@ SwsFunc ff_yuv2rgb_get_func_ptr(SwsInternal *c)
     if (t)
         return t;
 
-    av_log(c, AV_LOG_WARNING,
-           "No accelerated colorspace conversion found from %s to %s.\n",
-           av_get_pix_fmt_name(c->opts.src_format), av_get_pix_fmt_name(c->opts.dst_format));
-
     if (c->opts.src_format == AV_PIX_FMT_YUV422P) {
         switch (c->opts.dst_format) {
         case AV_PIX_FMT_BGR48BE:
